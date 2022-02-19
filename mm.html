@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name='referrer' content="never">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name='robots' content='max-image-preview:large' />
+    <link rel='stylesheet' id='wp-block-library-css' href='static/css/style.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='style-css' href='static/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-css' href='static/css/font_2569006_kbdm9t7c1n.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='swiper-css' href='static/css/swiper-bundle.min.css' type='text/css' media='all' />
+    <script type='text/javascript' src='static/js/jquery.min.js' id='jquery-js'></script>
+</head>
+
+<body class="post-template-default single single-post postid-3611 single-format-standard">
+    <section id="warp">
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="container">
+                
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <script>
+        function getJson(data){
+            var demo = document.getElementById("container");
+            var new_html = '';
+            var d = data['data'];
+            for(var item of d){
+                new_html += `
+                <div class="swiper-slide">
+                    <a href="`+ item['href'] +`" target="_blank" style="color: #fff">`+ item['text'] +`</a>
+                    <span style="color: #fff">`+ item['source'] +`</span>
+                    <span style="color: #fff">`+ item['popu'] +`</span>
+                </div>
+                `
+            }
+            new_html += `
+                <div class="swiper-slide is_blank ">
+                    <div class="more">
+                        <div class="more-normal">
+                            <h2>点击继续阅读或刷新，即可获取更多美图~</h2>
+                        </div> <a class="more-btn" href="javascript:location.reload();">继续浏览</a>
+                    </div>
+                </div>
+                `
+            demo.innerHTML += new_html;
+        }
+    </script>
+    <script type="text/javascript" src="data.json"></script>
+    <script type='text/javascript' src='static/js/ycsd.min.js' id='ycsd-js'></script>
+    <script type='text/javascript' src='static/js/layer.js' id='layer-js'></script>
+    <script type='text/javascript' src='static/js/lazysizes.min.js' id='lazysizes-js'></script>
+    <script type='text/javascript' src='static/js/jquery.superslide.js' id='superslide-js'></script>
+    <script type='text/javascript' src='static/js/swiper-bundle.min.js' id='swiper-js'></script>
+</body>
+
+</html>
